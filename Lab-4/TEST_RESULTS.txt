@@ -1,0 +1,23 @@
+Lab 4 — Automated Verification Results
+Date: 14 October 2026
+
+Command:
+python -m unittest discover -s tests -v
+
+Result: 33 tests passed, 0 failed.
+- 12 pure game-logic tests: validation against secret word, normalization, empty guesses, scramble invariants across all game words, pathological shuffle fallback, hint progression/exhaustion, reward floor, and ASCII letter validation.
+- 21 GameEngine/TextBox tests using a lightweight Pygame test double: correct/wrong/empty guesses, scoring and hint penalty, countdown and timeout progression, submissions blocked after timeout, negative delta handling, keyboard Enter/H/R behavior, H focus behavior, tile selection/deselection and full answer assembly, button clicks, restart, text input/backspace/length limit, and render method smoke test.
+
+Static compilation:
+python -m compileall -q main.py game tests
+Result: passed (exit code 0).
+
+Environment limitations:
+- Pygame is not installed in the authoring environment, so the actual SDL/Windows GUI was not launched here.
+- A fake Pygame surface in tests checks that render() does not raise under the stub; this is not proof of correct real rendering.
+- Actual gameplay, display sizing, real mouse/keyboard events, timer appearance, and videos must still be manually verified on the user's Windows machine with Python 3.13 and pygame 2.6.1.
+- The before/after videos and actual ChatGPT export are not fabricated or included.
+
+Additional property checks:
+- 1,500 randomized scrambles across the 15-word game bank preserved every letter and changed the order whenever a different permutation was possible.
+- Additional answer-normalization and reward-floor assertions passed.

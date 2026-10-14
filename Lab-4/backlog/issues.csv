@@ -1,0 +1,6 @@
+Title,Type,Story Points,Priority,Labels,Parent Epic
+Fix secret-word validation,Bug/User Story,2,High,"bug; user-story; priority:high",Improve Word Scramble Gameplay
+Add progressive hints,Feature/User Story,3,Medium,"enhancement; user-story; priority:medium",Improve Word Scramble Gameplay
+Add a round countdown,Feature/User Story,5,Medium,"enhancement; user-story; priority:medium",Improve Word Scramble Gameplay
+Interactive letter tiles,Feature/User Story,5,Medium,"enhancement; user-story; priority:medium",Improve Word Scramble Gameplay
+Add automated logic tests,Engineering/User Story,3,High,"testing; user-story; priority:high",Improve Word Scramble Gameplay
